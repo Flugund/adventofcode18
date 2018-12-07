@@ -14,7 +14,7 @@ console.log(test1 === 'dabCBAcaDA', test1, 'dabCBAcaDA')
 */
 
 // console.log(day5part2('dabAcCaCBAcCcaDA'), 4)
-console.log(day5part2('dabAcCaCBAcCcaDA') === 4)
+// console.log(day5part2('dabAcCaCBAcCcaDA') === 4)
 
 const input = fs.readFileSync("./input", "utf8")
 
@@ -23,7 +23,16 @@ const input = fs.readFileSync("./input", "utf8")
 // const res = fs.readFileSync("./result", "utf8")
 // console.log(res.length)
 
-console.log(day5part2(input))
+
+async function test() {
+    const startTime = Date.now()
+
+    console.log(await day5part2(input) === 4572, 4572)
+
+    console.log('Time: ' + (Date.now() - startTime))
+}
+
+test()
 
 /**
  * Shuffles array in place. ES6 version
